@@ -14,14 +14,14 @@
   <a href="https://github.com/hammasbuilds/docstring-drift/actions/workflows/ci.yml"><img src="https://github.com/hammasbuilds/docstring-drift/actions/workflows/ci.yml/badge.svg" alt="ci"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/hammasbuilds/docstring-drift" alt="license"></a>
   <img src="https://img.shields.io/badge/python-3.11%2B-blue" alt="python">
-  <img src="https://img.shields.io/badge/tests-20%20passing-brightgreen" alt="tests">
+  <img src="https://img.shields.io/badge/tests-42%20passing-brightgreen" alt="tests">
   <img src="https://img.shields.io/badge/runtime%20deps-zero-success" alt="zero dependencies">
   <a href="https://github.com/astral-sh/ruff"><img src="https://img.shields.io/badge/lint-ruff-261230" alt="ruff"></a>
 </p>
 
 ---
 
-> ### 101 documented parameters across eight major Python libraries do not exist on the function they describe.
+> ### 517 documented parameters across 161 Python packages do not exist on the function they describe — 1.93% of every function that documents its parameters.
 
 Rename a parameter and nothing fails. No test breaks, no linter complains, no type checker
 objects — the docstring simply keeps describing a function that no longer exists.
@@ -29,19 +29,49 @@ objects — the docstring simply keeps describing a function that no longer exis
 This compares what a docstring **claims** the parameters are against what the signature
 **actually says**. Pure AST: no imports, no execution, no model, no network.
 
+**This number replaces an earlier one, and it is lower on purpose.** The first
+version reported 101 phantom parameters across eight libraries. Scanning 161
+packages instead of eight raised the count to 956 — and then reading the
+findings showed that **53% of them were not parameters at all**. The six
+most-reported "documented parameters" in the whole corpus were docstring
+section headers:
+
+```
+ 84  Returns        49  Examples      21  Shape
+ 59  Example        25  See            8  Inputs
+```
+
+Three bugs caused it. The section-header pattern only matched a header alone
+on its line, so `Returns: the loss value` fell through and was recorded as a
+parameter. Seven common headers — `Definitions`, `Requirements`, `Relations`,
+`Shape`, `Inputs`, `Outputs` and singular `Warning` — were missing from the
+list entirely. And a URL in a description parsed as a parameter, because
+`https` is a word followed by a colon.
+
+Fixed, the same 161 packages give **517**. Every one of the three bugs is now
+a test using the string that caused it.
+
 ---
 
 ## The result
 
 | Package | functions | documenting params | **phantom** |
 |---|---:|---:|---:|
-| pandas | 28,295 | 1,653 | **40** |
-| scipy | 24,004 | 1,953 | **27** |
-| huggingface_hub | 1,937 | 399 | **13** |
-| scikit-learn | 11,158 | 1,665 | **9** |
-| numpy | 11,215 | 761 | **8** |
-| altair · PIL · streamlit | 7,150 | 809 | **4** |
-| **Total** | **83,759** | **7,240** | **101** |
+| transformers | 35,432 | 2,740 | **105** |
+| torch | 42,608 | 2,183 | **105** |
+| sympy | 35,561 | 1,361 | **52** |
+| networkx | 7,207 | 1,076 | **49** |
+| pandas | 28,295 | 1,631 | **40** |
+| scipy | 24,004 | 1,872 | **19** |
+| fontTools | 5,524 | 155 | **12** |
+| rich | 912 | 265 | **10** |
+| websockets · scikit-learn · sentence-transformers | 13,448 | 1,965 | **27** |
+| numpy | 11,215 | 732 | **8** |
+| 151 others | 122,626 | 12,876 | **90** |
+| **161 packages** | **326,832** | **26,856** | **517** |
+
+**45 of 161 packages carry at least one.** The rest are clean, which is the
+other half of the result: this is not a rate that applies everywhere.
 
 **Phantom rate: 1.40%** of every function that documents its parameters.
 

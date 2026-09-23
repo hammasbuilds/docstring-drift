@@ -29,11 +29,29 @@ ENTRY = re.compile(r"^[ \t]*(\*{0,2}[A-Za-z_]\w*)[ \t]*(?:\([^)]*\))?[ \t]*:")
 NUMPY_ENTRY = re.compile(r"^[ \t]*(\*{0,2}[A-Za-z_]\w*)[ \t]*(?::[ \t]*.*)?$")
 
 # Sections that end an argument block.
+#
+# Two things here were wrong and both inflated the headline.
+#
+# The pattern ended in `\s*$`, so it only matched a header sitting alone on its
+# line. Real docstrings write `Returns: the loss value`, which fell through to
+# ENTRY and was recorded as a parameter named `Returns` — 84 times in six
+# packages, the single most "documented" parameter in the corpus.
+#
+# And the list was short. `Definitions`, `Requirements`, `Relations`, `Shape`,
+# `Inputs`, `Outputs` and singular `Warning` are all common headers that were
+# missing, so everything beneath them was read as parameters.
 STOP = re.compile(
-    r"^[ \t]*(Returns|Return|Yields|Raises|Examples?|Notes?|See Also|References|"
-    r"Attributes|Warns|Warnings|Todo)\s*:?\s*$",
+    r"^[ \t]*(Returns?|Yields?|Raises?|Examples?|Notes?|See Also|See|References?|"
+    r"Attributes?|Warns|Warnings?|Todo|Shape|Inputs?|Outputs?|Requirements?|"
+    r"Relations?|Definitions?|Usage|Methods?|Tip|Hint|Caution|Danger|Important|"
+    r"Attention|Deprecated|Version|Added|Changed)\s*:?.*$",
     re.MULTILINE | re.IGNORECASE,
 )
+
+# A URL in a description is not a parameter. `https://example.com` matches
+# ENTRY because `https` is a word followed by a colon, which put `https` in
+# the results five times across six packages.
+URLISH = re.compile(r"^\s*\*{0,2}(?:https?|ftp|ftps|file|mailto|ssh|git)\s*:", re.I)
 
 SELFISH = {"self", "cls"}
 
@@ -57,6 +75,8 @@ def documented_params(docstring: str) -> set[str]:
             inside = False
             continue
         if not inside or NUMPY_RULE.match(line) or not line.strip():
+            continue
+        if URLISH.match(line):
             continue
 
         indent = len(line) - len(line.lstrip())

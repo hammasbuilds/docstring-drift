@@ -155,3 +155,86 @@ def test_all_styles_catch_the_same_drift(style):
     }[style]
     findings = scan_source("def f(here):\n" + body, "x.py")
     assert [f.name for f in findings if f.kind == "phantom"] == ["gone"]
+
+
+# --- section headers read as parameters -------------------------------------
+#
+# Found by scanning 161 installed packages instead of eight. The top six
+# "documented parameters" in the corpus were all docstring section headers,
+# and they were 53% of every finding: 679 phantom results became 321 once
+# these were fixed. Each string below is copied from a real library.
+
+
+def test_a_section_header_with_trailing_text_is_not_a_parameter():
+    """The single biggest false positive: 84 occurrences of `Returns`.
+
+    STOP only matched a header alone on its line, so "Returns: the loss"
+    fell through to the entry pattern and was recorded as a parameter.
+    """
+    doc = """Build the loss.
+
+    Args:
+        labels: labels of the batch
+        embeddings: tensor of shape (batch_size, embed_dim)
+
+    Returns: scalar tensor containing the triplet loss
+    """
+    assert documented_params(doc) == {"labels", "embeddings"}
+
+
+@pytest.mark.parametrize(
+    "header",
+    ["Returns", "Example", "Examples", "See Also", "Shape", "Inputs", "Outputs",
+     "Requirements", "Relations", "Definitions", "Warning", "Warnings", "Notes",
+     "References", "Usage", "Methods", "Tip", "Caution", "Deprecated"],
+)
+def test_every_known_section_header_ends_the_argument_block(header):
+    doc = f"""Summary.
+
+    Args:
+        real_one: a genuine parameter
+
+    {header}:
+        not_a_parameter: this is prose under a heading
+    """
+    assert documented_params(doc) == {"real_one"}
+
+
+def test_a_url_in_a_description_is_not_a_parameter():
+    """`https` was reported five times across six packages.
+
+    A URL matches the entry pattern because `https` is a word followed by a
+    colon.
+    """
+    doc = """Summary.
+
+    Args:
+        model: the model to use
+        https://github.com/example/repo: not a parameter
+    """
+    assert "https" not in documented_params(doc)
+    assert "model" in documented_params(doc)
+
+
+def test_the_real_sentence_transformers_docstring_still_reports_its_drift():
+    """The true positive this must not lose while removing false ones.
+
+    `batch_all_triplet_loss(self, labels, embeddings)` documents `margin` and
+    `squared`, and neither is a parameter. Verified against the installed
+    source before this test was written.
+    """
+    doc = """Build the triplet loss over a batch of embeddings.
+
+    Args:
+        labels: labels of the batch, of size (batch_size,)
+        embeddings: tensor of shape (batch_size, embed_dim)
+        margin: margin for triplet loss
+        squared: Boolean. If true, output is the pairwise squared distance.
+
+    Returns:
+        Label_Sentence_Triplet: scalar tensor containing the triplet loss
+    """
+    found = documented_params(doc)
+    assert {"margin", "squared"} <= found
+    assert "Returns" not in found
+    assert "Label_Sentence_Triplet" not in found

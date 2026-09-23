@@ -1,0 +1,3862 @@
+{
+ "totals": {
+  "files": 20607,
+  "functions": 326832,
+  "with_param_docs": 26856,
+  "phantom": 517,
+  "undocumented": 20050
+ },
+ "packages": {
+  "PIL": {
+   "stats": {
+    "files": 97,
+    "functions": 1228,
+    "with_param_docs": 205,
+    "phantom": 1,
+    "undocumented": 13
+   },
+   "phantom": [
+    {
+     "file": "ImageStat.py",
+     "line": 32,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "accelerate": {
+   "stats": {
+    "files": 84,
+    "functions": 1254,
+    "with_param_docs": 190,
+    "phantom": 0,
+    "undocumented": 54
+   },
+   "phantom": []
+  },
+  "adodbapi": {
+   "stats": {
+    "files": 12,
+    "functions": 124,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "aiohappyeyeballs": {
+   "stats": {
+    "files": 5,
+    "functions": 12,
+    "with_param_docs": 1,
+    "phantom": 0,
+    "undocumented": 2
+   },
+   "phantom": []
+  },
+  "aiohttp": {
+   "stats": {
+    "files": 55,
+    "functions": 1589,
+    "with_param_docs": 31,
+    "phantom": 0,
+    "undocumented": 2
+   },
+   "phantom": []
+  },
+  "aiokafka": {
+   "stats": {
+    "files": 61,
+    "functions": 852,
+    "with_param_docs": 65,
+    "phantom": 0,
+    "undocumented": 9
+   },
+   "phantom": []
+  },
+  "aiosignal": {
+   "stats": {
+    "files": 1,
+    "functions": 4,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "altair": {
+   "stats": {
+    "files": 55,
+    "functions": 2507,
+    "with_param_docs": 116,
+    "phantom": 3,
+    "undocumented": 86
+   },
+   "phantom": [
+    {
+     "file": "vegalite\\v6\\api.py",
+     "line": 3234,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "vegalite\\v6\\api.py",
+     "line": 3267,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "vegalite\\v6\\api.py",
+     "line": 3439,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "annotated_doc": {
+   "stats": {
+    "files": 2,
+    "functions": 4,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "annotated_types": {
+   "stats": {
+    "files": 2,
+    "functions": 16,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "anthropic": {
+   "stats": {
+    "files": 1404,
+    "functions": 2486,
+    "with_param_docs": 424,
+    "phantom": 0,
+    "undocumented": 1073
+   },
+   "phantom": []
+  },
+  "anyio": {
+   "stats": {
+    "files": 46,
+    "functions": 1144,
+    "with_param_docs": 99,
+    "phantom": 1,
+    "undocumented": 13
+   },
+   "phantom": [
+    {
+     "file": "_core\\_tempfile.py",
+     "line": 406,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "async_timeout": {
+   "stats": {
+    "files": 1,
+    "functions": 26,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "attr": {
+   "stats": {
+    "files": 13,
+    "functions": 208,
+    "with_param_docs": 32,
+    "phantom": 0,
+    "undocumented": 52
+   },
+   "phantom": []
+  },
+  "certifi": {
+   "stats": {
+    "files": 5,
+    "functions": 8,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "cffi": {
+   "stats": {
+    "files": 20,
+    "functions": 583,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "charset_normalizer": {
+   "stats": {
+    "files": 12,
+    "functions": 136,
+    "with_param_docs": 2,
+    "phantom": 0,
+    "undocumented": 1
+   },
+   "phantom": []
+  },
+  "click": {
+   "stats": {
+    "files": 17,
+    "functions": 579,
+    "with_param_docs": 72,
+    "phantom": 0,
+    "undocumented": 5
+   },
+   "phantom": []
+  },
+  "cloudpickle": {
+   "stats": {
+    "files": 3,
+    "functions": 78,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "colorama": {
+   "stats": {
+    "files": 13,
+    "functions": 136,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "contourpy": {
+   "stats": {
+    "files": 17,
+    "functions": 104,
+    "with_param_docs": 31,
+    "phantom": 0,
+    "undocumented": 21
+   },
+   "phantom": []
+  },
+  "cryptography": {
+   "stats": {
+    "files": 78,
+    "functions": 1040,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "cv2": {
+   "stats": {
+    "files": 13,
+    "functions": 58,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "cycler": {
+   "stats": {
+    "files": 1,
+    "functions": 30,
+    "with_param_docs": 7,
+    "phantom": 0,
+    "undocumented": 2
+   },
+   "phantom": []
+  },
+  "datasets": {
+   "stats": {
+    "files": 138,
+    "functions": 1857,
+    "with_param_docs": 368,
+    "phantom": 4,
+    "undocumented": 315
+   },
+   "phantom": [
+    {
+     "file": "builder.py",
+     "line": 991,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "search.py",
+     "line": 585,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "table.py",
+     "line": 2289,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "utils\\stratify.py",
+     "line": 54,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "dateutil": {
+   "stats": {
+    "files": 18,
+    "functions": 306,
+    "with_param_docs": 37,
+    "phantom": 0,
+    "undocumented": 5
+   },
+   "phantom": []
+  },
+  "dill": {
+   "stats": {
+    "files": 46,
+    "functions": 515,
+    "with_param_docs": 7,
+    "phantom": 0,
+    "undocumented": 1
+   },
+   "phantom": []
+  },
+  "distro": {
+   "stats": {
+    "files": 3,
+    "functions": 57,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "docstring_parser": {
+   "stats": {
+    "files": 9,
+    "functions": 66,
+    "with_param_docs": 18,
+    "phantom": 0,
+    "undocumented": 1
+   },
+   "phantom": []
+  },
+  "dotenv": {
+   "stats": {
+    "files": 8,
+    "functions": 65,
+    "with_param_docs": 3,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "en_core_web_sm": {
+   "stats": {
+    "files": 1,
+    "functions": 1,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "et_xmlfile": {
+   "stats": {
+    "files": 3,
+    "functions": 22,
+    "with_param_docs": 1,
+    "phantom": 0,
+    "undocumented": 1
+   },
+   "phantom": []
+  },
+  "fastapi": {
+   "stats": {
+    "files": 48,
+    "functions": 387,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "filelock": {
+   "stats": {
+    "files": 21,
+    "functions": 429,
+    "with_param_docs": 41,
+    "phantom": 0,
+    "undocumented": 1
+   },
+   "phantom": []
+  },
+  "fontTools": {
+   "stats": {
+    "files": 341,
+    "functions": 5524,
+    "with_param_docs": 155,
+    "phantom": 12,
+    "undocumented": 77
+   },
+   "phantom": [
+    {
+     "file": "cu2qu\\cu2qu.py",
+     "line": 470,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "misc\\arrayTools.py",
+     "line": 141,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "misc\\arrayTools.py",
+     "line": 157,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "misc\\arrayTools.py",
+     "line": 173,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "misc\\plistlib\\__init__.py",
+     "line": 579,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "misc\\plistlib\\__init__.py",
+     "line": 639,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "misc\\roundTools.py",
+     "line": 62,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "otlLib\\builder.py",
+     "line": 2623,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "otlLib\\builder.py",
+     "line": 1786,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "ttLib\\tables\\_c_m_a_p.py",
+     "line": 60,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "ufoLib\\filenames.py",
+     "line": 289,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "varLib\\instancer\\__init__.py",
+     "line": 1283,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "formulaic": {
+   "stats": {
+    "files": 58,
+    "functions": 456,
+    "with_param_docs": 110,
+    "phantom": 5,
+    "undocumented": 20
+   },
+   "phantom": [
+    {
+     "file": "parser\\parser.py",
+     "line": 210,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "parser\\types\\formula_parser.py",
+     "line": 144,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "parser\\types\\formula_parser.py",
+     "line": 160,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "parser\\types\\operator_resolver.py",
+     "line": 50,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "parser\\types\\operator_resolver.py",
+     "line": 50,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "frozenlist": {
+   "stats": {
+    "files": 1,
+    "functions": 14,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "fsspec": {
+   "stats": {
+    "files": 57,
+    "functions": 1154,
+    "with_param_docs": 122,
+    "phantom": 1,
+    "undocumented": 106
+   },
+   "phantom": [
+    {
+     "file": "implementations\\cache_metadata.py",
+     "line": 63,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "functorch": {
+   "stats": {
+    "files": 24,
+    "functions": 142,
+    "with_param_docs": 24,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "gensim": {
+   "stats": {
+    "files": 77,
+    "functions": 1124,
+    "with_param_docs": 634,
+    "phantom": 6,
+    "undocumented": 345
+   },
+   "phantom": [
+    {
+     "file": "models\\doc2vec.py",
+     "line": 1017,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\doc2vec.py",
+     "line": 1063,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\fasttext.py",
+     "line": 666,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\tfidfmodel.py",
+     "line": 153,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "similarities\\termsim.py",
+     "line": 518,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "similarities\\termsim.py",
+     "line": 518,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "google": {
+   "stats": {
+    "files": 58,
+    "functions": 913,
+    "with_param_docs": 203,
+    "phantom": 3,
+    "undocumented": 25
+   },
+   "phantom": [
+    {
+     "file": "protobuf\\internal\\containers.py",
+     "line": 563,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "protobuf\\internal\\python_message.py",
+     "line": 471,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "protobuf\\proto_text.py",
+     "line": 81,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "h11": {
+   "stats": {
+    "files": 11,
+    "functions": 95,
+    "with_param_docs": 2,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "httpcore": {
+   "stats": {
+    "files": 31,
+    "functions": 429,
+    "with_param_docs": 8,
+    "phantom": 4,
+    "undocumented": 6
+   },
+   "phantom": [
+    {
+     "file": "_async\\socks_proxy.py",
+     "line": 110,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_async\\socks_proxy.py",
+     "line": 110,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_sync\\socks_proxy.py",
+     "line": 110,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_sync\\socks_proxy.py",
+     "line": 110,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "httpcore2": {
+   "stats": {
+    "files": 31,
+    "functions": 451,
+    "with_param_docs": 8,
+    "phantom": 4,
+    "undocumented": 6
+   },
+   "phantom": [
+    {
+     "file": "_async\\socks_proxy.py",
+     "line": 108,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_async\\socks_proxy.py",
+     "line": 108,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_sync\\socks_proxy.py",
+     "line": 108,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_sync\\socks_proxy.py",
+     "line": 108,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "httptools": {
+   "stats": {
+    "files": 5,
+    "functions": 9,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "httpx": {
+   "stats": {
+    "files": 23,
+    "functions": 446,
+    "with_param_docs": 1,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "httpx2": {
+   "stats": {
+    "files": 30,
+    "functions": 561,
+    "with_param_docs": 27,
+    "phantom": 0,
+    "undocumented": 4
+   },
+   "phantom": []
+  },
+  "huggingface_hub": {
+   "stats": {
+    "files": 183,
+    "functions": 1937,
+    "with_param_docs": 391,
+    "phantom": 2,
+    "undocumented": 282
+   },
+   "phantom": [
+    {
+     "file": "inference\\_common.py",
+     "line": 394,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "lfs.py",
+     "line": 351,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "idna": {
+   "stats": {
+    "files": 10,
+    "functions": 39,
+    "with_param_docs": 18,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "imageio": {
+   "stats": {
+    "files": 49,
+    "functions": 1118,
+    "with_param_docs": 101,
+    "phantom": 7,
+    "undocumented": 72
+   },
+   "phantom": [
+    {
+     "file": "core\\fetching.py",
+     "line": 131,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\legacy_plugin_wrapper.py",
+     "line": 59,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\v3_plugin_api.py",
+     "line": 177,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\v3_plugin_api.py",
+     "line": 240,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "plugins\\pillow.py",
+     "line": 152,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "plugins\\pillow.py",
+     "line": 267,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "plugins\\pyav.py",
+     "line": 530,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "iniconfig": {
+   "stats": {
+    "files": 4,
+    "functions": 30,
+    "with_param_docs": 2,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "interface_meta": {
+   "stats": {
+    "files": 10,
+    "functions": 54,
+    "with_param_docs": 12,
+    "phantom": 0,
+    "undocumented": 5
+   },
+   "phantom": []
+  },
+  "isapi": {
+   "stats": {
+    "files": 10,
+    "functions": 92,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "itsdangerous": {
+   "stats": {
+    "files": 8,
+    "functions": 62,
+    "with_param_docs": 1,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "jinja2": {
+   "stats": {
+    "files": 25,
+    "functions": 775,
+    "with_param_docs": 28,
+    "phantom": 0,
+    "undocumented": 12
+   },
+   "phantom": []
+  },
+  "joblib": {
+   "stats": {
+    "files": 44,
+    "functions": 645,
+    "with_param_docs": 34,
+    "phantom": 1,
+    "undocumented": 8
+   },
+   "phantom": [
+    {
+     "file": "_parallel_backends.py",
+     "line": 128,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "jsonschema": {
+   "stats": {
+    "files": 37,
+    "functions": 663,
+    "with_param_docs": 18,
+    "phantom": 0,
+    "undocumented": 14
+   },
+   "phantom": []
+  },
+  "jsonschema_specifications": {
+   "stats": {
+    "files": 4,
+    "functions": 4,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "jwt": {
+   "stats": {
+    "files": 12,
+    "functions": 131,
+    "with_param_docs": 16,
+    "phantom": 0,
+    "undocumented": 8
+   },
+   "phantom": []
+  },
+  "kiwisolver": {
+   "stats": {
+    "files": 2,
+    "functions": 5,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "langchain_core": {
+   "stats": {
+    "files": 181,
+    "functions": 2290,
+    "with_param_docs": 863,
+    "phantom": 1,
+    "undocumented": 218
+   },
+   "phantom": [
+    {
+     "file": "messages\\ai.py",
+     "line": 354,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "langchain_ollama": {
+   "stats": {
+    "files": 6,
+    "functions": 53,
+    "with_param_docs": 13,
+    "phantom": 0,
+    "undocumented": 3
+   },
+   "phantom": []
+  },
+  "langgraph": {
+   "stats": {
+    "files": 102,
+    "functions": 1224,
+    "with_param_docs": 157,
+    "phantom": 1,
+    "undocumented": 110
+   },
+   "phantom": [
+    {
+     "file": "_internal\\_pydantic.py",
+     "line": 181,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "langgraph_sdk": {
+   "stats": {
+    "files": 45,
+    "functions": 580,
+    "with_param_docs": 109,
+    "phantom": 0,
+    "undocumented": 293
+   },
+   "phantom": []
+  },
+  "langsmith": {
+   "stats": {
+    "files": 300,
+    "functions": 2894,
+    "with_param_docs": 521,
+    "phantom": 2,
+    "undocumented": 694
+   },
+   "phantom": [
+    {
+     "file": "_internal\\otel\\_otel_exporter.py",
+     "line": 296,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "evaluation\\evaluator.py",
+     "line": 584,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "lazy_loader": {
+   "stats": {
+    "files": 1,
+    "functions": 10,
+    "with_param_docs": 4,
+    "phantom": 0,
+    "undocumented": 2
+   },
+   "phantom": []
+  },
+  "markdown_it": {
+   "stats": {
+    "files": 66,
+    "functions": 258,
+    "with_param_docs": 21,
+    "phantom": 0,
+    "undocumented": 2
+   },
+   "phantom": []
+  },
+  "markupsafe": {
+   "stats": {
+    "files": 2,
+    "functions": 54,
+    "with_param_docs": 1,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "matplotlib": {
+   "stats": {
+    "files": 248,
+    "functions": 9338,
+    "with_param_docs": 953,
+    "phantom": 4,
+    "undocumented": 846
+   },
+   "phantom": [
+    {
+     "file": "axes\\_axes.py",
+     "line": 8865,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "tests\\test_preprocess_data.py",
+     "line": 210,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "tests\\test_preprocess_data.py",
+     "line": 222,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "tests\\test_preprocess_data.py",
+     "line": 235,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "mcp": {
+   "stats": {
+    "files": 123,
+    "functions": 1080,
+    "with_param_docs": 104,
+    "phantom": 0,
+    "undocumented": 38
+   },
+   "phantom": []
+  },
+  "mcp_types": {
+   "stats": {
+    "files": 8,
+    "functions": 20,
+    "with_param_docs": 6,
+    "phantom": 0,
+    "undocumented": 18
+   },
+   "phantom": []
+  },
+  "mdurl": {
+   "stats": {
+    "files": 6,
+    "functions": 10,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "mpl_toolkits": {
+   "stats": {
+    "files": 40,
+    "functions": 887,
+    "with_param_docs": 122,
+    "phantom": 0,
+    "undocumented": 208
+   },
+   "phantom": []
+  },
+  "mpmath": {
+   "stats": {
+    "files": 87,
+    "functions": 1723,
+    "with_param_docs": 1,
+    "phantom": 0,
+    "undocumented": 1
+   },
+   "phantom": []
+  },
+  "multidict": {
+   "stats": {
+    "files": 4,
+    "functions": 149,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "multiprocess": {
+   "stats": {
+    "files": 46,
+    "functions": 1197,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "mypy": {
+   "stats": {
+    "files": 143,
+    "functions": 5767,
+    "with_param_docs": 46,
+    "phantom": 3,
+    "undocumented": 51
+   },
+   "phantom": [
+    {
+     "file": "server\\update.py",
+     "line": 172,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "server\\update.py",
+     "line": 172,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "stubgenc.py",
+     "line": 388,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "mypyc": {
+   "stats": {
+    "files": 102,
+    "functions": 2248,
+    "with_param_docs": 38,
+    "phantom": 0,
+    "undocumented": 69
+   },
+   "phantom": []
+  },
+  "narwhals": {
+   "stats": {
+    "files": 162,
+    "functions": 4123,
+    "with_param_docs": 318,
+    "phantom": 0,
+    "undocumented": 27
+   },
+   "phantom": []
+  },
+  "networkx": {
+   "stats": {
+    "files": 580,
+    "functions": 7207,
+    "with_param_docs": 1076,
+    "phantom": 49,
+    "undocumented": 508
+   },
+   "phantom": [
+    {
+     "file": "algorithms\\approximation\\kcomponents.py",
+     "line": 316,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "algorithms\\approximation\\kcomponents.py",
+     "line": 316,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "algorithms\\approximation\\traveling_salesman.py",
+     "line": 720,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "algorithms\\shortest_paths\\weighted.py",
+     "line": 1389,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "algorithms\\summarization.py",
+     "line": 359,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "algorithms\\tests\\test_planarity.py",
+     "line": 358,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "algorithms\\tests\\test_summarization.py",
+     "line": 53,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\digraph.py",
+     "line": 970,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\digraph.py",
+     "line": 970,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\digraph.py",
+     "line": 970,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\digraph.py",
+     "line": 1040,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\digraph.py",
+     "line": 1040,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\digraph.py",
+     "line": 1040,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\digraph.py",
+     "line": 1080,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\digraph.py",
+     "line": 1080,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\digraph.py",
+     "line": 1124,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\digraph.py",
+     "line": 1124,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\digraph.py",
+     "line": 1171,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\digraph.py",
+     "line": 1171,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\graph.py",
+     "line": 757,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\graph.py",
+     "line": 757,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\graph.py",
+     "line": 1388,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\graph.py",
+     "line": 1388,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\graph.py",
+     "line": 1388,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\graph.py",
+     "line": 1511,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\graph.py",
+     "line": 1511,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\multidigraph.py",
+     "line": 602,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\multidigraph.py",
+     "line": 602,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\multidigraph.py",
+     "line": 602,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\multidigraph.py",
+     "line": 602,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\multidigraph.py",
+     "line": 690,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\multidigraph.py",
+     "line": 690,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\multidigraph.py",
+     "line": 690,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\multidigraph.py",
+     "line": 690,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\multidigraph.py",
+     "line": 724,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\multidigraph.py",
+     "line": 724,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\multidigraph.py",
+     "line": 772,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\multidigraph.py",
+     "line": 772,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\multidigraph.py",
+     "line": 823,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "classes\\multidigraph.py",
+     "line": 823,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "numpy": {
+   "stats": {
+    "files": 407,
+    "functions": 11215,
+    "with_param_docs": 732,
+    "phantom": 8,
+    "undocumented": 679
+   },
+   "phantom": [
+    {
+     "file": "_utils\\__init__.py",
+     "line": 41,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "lib\\_npyio_impl.py",
+     "line": 1735,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "lib\\_npyio_impl.py",
+     "line": 1735,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "lib\\recfunctions.py",
+     "line": 1274,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "ma\\core.py",
+     "line": 5788,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "ma\\core.py",
+     "line": 6186,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "ma\\extras.py",
+     "line": 955,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "ma\\extras.py",
+     "line": 994,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "ollama": {
+   "stats": {
+    "files": 4,
+    "functions": 87,
+    "with_param_docs": 6,
+    "phantom": 4,
+    "undocumented": 14
+   },
+   "phantom": [
+    {
+     "file": "_client.py",
+     "line": 340,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_client.py",
+     "line": 340,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_client.py",
+     "line": 972,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_client.py",
+     "line": 972,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "openpyxl": {
+   "stats": {
+    "files": 190,
+    "functions": 1339,
+    "with_param_docs": 27,
+    "phantom": 3,
+    "undocumented": 3
+   },
+   "phantom": [
+    {
+     "file": "workbook\\workbook.py",
+     "line": 277,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "worksheet\\cell_range.py",
+     "line": 374,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "worksheet\\cell_range.py",
+     "line": 374,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "opentelemetry": {
+   "stats": {
+    "files": 30,
+    "functions": 281,
+    "with_param_docs": 51,
+    "phantom": 0,
+    "undocumented": 35
+   },
+   "phantom": []
+  },
+  "ormsgpack": {
+   "stats": {
+    "files": 3,
+    "functions": 1,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "packaging": {
+   "stats": {
+    "files": 22,
+    "functions": 476,
+    "with_param_docs": 43,
+    "phantom": 0,
+    "undocumented": 6
+   },
+   "phantom": []
+  },
+  "pandas": {
+   "stats": {
+    "files": 1421,
+    "functions": 28295,
+    "with_param_docs": 1631,
+    "phantom": 40,
+    "undocumented": 761
+   },
+   "phantom": [
+    {
+     "file": "_testing\\_io.py",
+     "line": 29,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_testing\\_io.py",
+     "line": 49,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "conftest.py",
+     "line": 1167,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\algorithms.py",
+     "line": 1320,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\arrays\\sparse\\array.py",
+     "line": 1890,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\computation\\engines.py",
+     "line": 99,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\dtypes\\missing.py",
+     "line": 223,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\groupby\\groupby.py",
+     "line": 6167,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\groupby\\groupby.py",
+     "line": 6167,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\groupby\\groupby.py",
+     "line": 6167,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\groupby\\groupby.py",
+     "line": 6167,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\indexers\\objects.py",
+     "line": 72,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\indexers\\objects.py",
+     "line": 72,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\indexers\\objects.py",
+     "line": 111,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\indexers\\objects.py",
+     "line": 111,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\indexers\\objects.py",
+     "line": 165,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\indexers\\objects.py",
+     "line": 165,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\indexers\\objects.py",
+     "line": 296,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\indexers\\objects.py",
+     "line": 296,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\indexers\\objects.py",
+     "line": 401,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\indexers\\objects.py",
+     "line": 401,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\indexers\\objects.py",
+     "line": 486,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\indexers\\objects.py",
+     "line": 486,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\indexers\\objects.py",
+     "line": 575,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\indexers\\objects.py",
+     "line": 575,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\indexers\\objects.py",
+     "line": 656,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\indexers\\objects.py",
+     "line": 656,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\indexes\\base.py",
+     "line": 7837,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\indexes\\multi.py",
+     "line": 364,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\indexes\\multi.py",
+     "line": 1662,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\internals\\blocks.py",
+     "line": 1035,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\internals\\managers.py",
+     "line": 111,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "io\\formats\\css.py",
+     "line": 23,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "io\\formats\\css.py",
+     "line": 219,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "io\\formats\\style.py",
+     "line": 4216,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "io\\formats\\style_render.py",
+     "line": 625,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "io\\formats\\style_render.py",
+     "line": 2239,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "io\\formats\\style_render.py",
+     "line": 2239,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "tseries\\frequencies.py",
+     "line": 568,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "util\\_decorators.py",
+     "line": 227,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "pathspec": {
+   "stats": {
+    "files": 31,
+    "functions": 105,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "patsy": {
+   "stats": {
+    "files": 30,
+    "functions": 575,
+    "with_param_docs": 12,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "peft": {
+   "stats": {
+    "files": 245,
+    "functions": 1880,
+    "with_param_docs": 254,
+    "phantom": 6,
+    "undocumented": 93
+   },
+   "phantom": [
+    {
+     "file": "tuners\\lora\\loraga.py",
+     "line": 47,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "tuners\\oft\\layer.py",
+     "line": 120,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "tuners\\oft\\layer.py",
+     "line": 288,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "tuners\\tuners_utils.py",
+     "line": 408,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "tuners\\tuners_utils.py",
+     "line": 428,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "tuners\\tuners_utils.py",
+     "line": 1280,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "pgvector": {
+   "stats": {
+    "files": 40,
+    "functions": 206,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "pkg_resources": {
+   "stats": {
+    "files": 9,
+    "functions": 376,
+    "with_param_docs": 1,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "pluggy": {
+   "stats": {
+    "files": 8,
+    "functions": 91,
+    "with_param_docs": 5,
+    "phantom": 0,
+    "undocumented": 4
+   },
+   "phantom": []
+  },
+  "propcache": {
+   "stats": {
+    "files": 4,
+    "functions": 7,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "psutil": {
+   "stats": {
+    "files": 10,
+    "functions": 535,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "psycopg": {
+   "stats": {
+    "files": 83,
+    "functions": 1411,
+    "with_param_docs": 50,
+    "phantom": 1,
+    "undocumented": 7
+   },
+   "phantom": [
+    {
+     "file": "_typeinfo.py",
+     "line": 302,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "psycopg_binary": {
+   "stats": {
+    "files": 3,
+    "functions": 1,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "psycopg_pool": {
+   "stats": {
+    "files": 15,
+    "functions": 173,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "pyarrow": {
+   "stats": {
+    "files": 105,
+    "functions": 3756,
+    "with_param_docs": 83,
+    "phantom": 1,
+    "undocumented": 29
+   },
+   "phantom": [
+    {
+     "file": "interchange\\from_dataframe.py",
+     "line": 320,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "pycparser": {
+   "stats": {
+    "files": 7,
+    "functions": 370,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "pydantic": {
+   "stats": {
+    "files": 105,
+    "functions": 1867,
+    "with_param_docs": 274,
+    "phantom": 3,
+    "undocumented": 111
+   },
+   "phantom": [
+    {
+     "file": "_internal\\_generate_schema.py",
+     "line": 2561,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "types.py",
+     "line": 1046,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "types.py",
+     "line": 1046,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "pydantic_core": {
+   "stats": {
+    "files": 2,
+    "functions": 106,
+    "with_param_docs": 68,
+    "phantom": 0,
+    "undocumented": 21
+   },
+   "phantom": []
+  },
+  "pydantic_settings": {
+   "stats": {
+    "files": 22,
+    "functions": 222,
+    "with_param_docs": 27,
+    "phantom": 0,
+    "undocumented": 14
+   },
+   "phantom": []
+  },
+  "pydeck": {
+   "stats": {
+    "files": 33,
+    "functions": 91,
+    "with_param_docs": 14,
+    "phantom": 1,
+    "undocumented": 11
+   },
+   "phantom": [
+    {
+     "file": "data_utils\\viewport_helpers.py",
+     "line": 153,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "pygments": {
+   "stats": {
+    "files": 343,
+    "functions": 937,
+    "with_param_docs": 1,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "pyparsing": {
+   "stats": {
+    "files": 17,
+    "functions": 489,
+    "with_param_docs": 16,
+    "phantom": 0,
+    "undocumented": 10
+   },
+   "phantom": []
+  },
+  "pypdf": {
+   "stats": {
+    "files": 59,
+    "functions": 1000,
+    "with_param_docs": 173,
+    "phantom": 1,
+    "undocumented": 32
+   },
+   "phantom": [
+    {
+     "file": "_writer.py",
+     "line": 1584,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "pyproject_hooks": {
+   "stats": {
+    "files": 4,
+    "functions": 45,
+    "with_param_docs": 8,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "pytest_asyncio": {
+   "stats": {
+    "files": 2,
+    "functions": 72,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "python_multipart": {
+   "stats": {
+    "files": 4,
+    "functions": 91,
+    "with_param_docs": 15,
+    "phantom": 0,
+    "undocumented": 4
+   },
+   "phantom": []
+  },
+  "pythonwin": {
+   "stats": {
+    "files": 104,
+    "functions": 1681,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "redis": {
+   "stats": {
+    "files": 120,
+    "functions": 4444,
+    "with_param_docs": 242,
+    "phantom": 0,
+    "undocumented": 238
+   },
+   "phantom": []
+  },
+  "referencing": {
+   "stats": {
+    "files": 13,
+    "functions": 218,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "regex": {
+   "stats": {
+    "files": 4,
+    "functions": 487,
+    "with_param_docs": 1,
+    "phantom": 0,
+    "undocumented": 1
+   },
+   "phantom": []
+  },
+  "requests": {
+   "stats": {
+    "files": 19,
+    "functions": 267,
+    "with_param_docs": 48,
+    "phantom": 0,
+    "undocumented": 16
+   },
+   "phantom": []
+  },
+  "requests_toolbelt": {
+   "stats": {
+    "files": 34,
+    "functions": 196,
+    "with_param_docs": 24,
+    "phantom": 0,
+    "undocumented": 2
+   },
+   "phantom": []
+  },
+  "rich": {
+   "stats": {
+    "files": 100,
+    "functions": 912,
+    "with_param_docs": 265,
+    "phantom": 10,
+    "undocumented": 52
+   },
+   "phantom": [
+    {
+     "file": "box.py",
+     "line": 115,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "console.py",
+     "line": 1819,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "console.py",
+     "line": 1819,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "filesize.py",
+     "line": 52,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "filesize.py",
+     "line": 52,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "pretty.py",
+     "line": 171,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "progress.py",
+     "line": 421,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "progress.py",
+     "line": 737,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "progress.py",
+     "line": 1311,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "segment.py",
+     "line": 354,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "ruff": {
+   "stats": {
+    "files": 3,
+    "functions": 6,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "safetensors": {
+   "stats": {
+    "files": 7,
+    "functions": 54,
+    "with_param_docs": 26,
+    "phantom": 0,
+    "undocumented": 12
+   },
+   "phantom": []
+  },
+  "scipy": {
+   "stats": {
+    "files": 988,
+    "functions": 24004,
+    "with_param_docs": 1872,
+    "phantom": 19,
+    "undocumented": 2307
+   },
+   "phantom": [
+    {
+     "file": "conftest.py",
+     "line": 446,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "conftest.py",
+     "line": 446,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "conftest.py",
+     "line": 446,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "conftest.py",
+     "line": 446,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "conftest.py",
+     "line": 446,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "conftest.py",
+     "line": 446,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "interpolate\\tests\\test_fitpack2.py",
+     "line": 1228,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "optimize\\_highspy\\_highs_wrapper.py",
+     "line": 9,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "optimize\\_highspy\\_highs_wrapper.py",
+     "line": 9,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "optimize\\_highspy\\_highs_wrapper.py",
+     "line": 9,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "optimize\\_linprog_util.py",
+     "line": 1314,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "optimize\\_linprog_util.py",
+     "line": 1314,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "optimize\\_shgo_lib\\_vertex.py",
+     "line": 57,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "signal\\_whittaker.py",
+     "line": 391,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "stats\\_distribution_infrastructure.py",
+     "line": 329,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "stats\\_multivariate.py",
+     "line": 1848,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "stats\\_probability_distribution.py",
+     "line": 1858,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "stats\\tests\\test_continuous_fit_censored.py",
+     "line": 269,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "stats\\tests\\test_discrete_basic.py",
+     "line": 279,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "sentence_transformers": {
+   "stats": {
+    "files": 211,
+    "functions": 1378,
+    "with_param_docs": 239,
+    "phantom": 9,
+    "undocumented": 155
+   },
+   "phantom": [
+    {
+     "file": "sentence_transformer\\losses\\batch_all_triplet.py",
+     "line": 100,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "sentence_transformer\\losses\\batch_all_triplet.py",
+     "line": 100,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "sentence_transformer\\losses\\batch_hard_soft_margin_triplet.py",
+     "line": 102,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "sentence_transformer\\losses\\batch_hard_triplet.py",
+     "line": 161,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "sentence_transformer\\losses\\batch_hard_triplet.py",
+     "line": 161,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "sentence_transformer\\losses\\batch_semi_hard_triplet.py",
+     "line": 113,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "sentence_transformer\\losses\\batch_semi_hard_triplet.py",
+     "line": 113,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "sparse_encoder\\model.py",
+     "line": 1062,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "sparse_encoder\\modules\\sparse_auto_encoder.py",
+     "line": 89,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "setuptools": {
+   "stats": {
+    "files": 317,
+    "functions": 3799,
+    "with_param_docs": 88,
+    "phantom": 0,
+    "undocumented": 12
+   },
+   "phantom": []
+  },
+  "shellingham": {
+   "stats": {
+    "files": 7,
+    "functions": 21,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "skimage": {
+   "stats": {
+    "files": 190,
+    "functions": 1102,
+    "with_param_docs": 606,
+    "phantom": 0,
+    "undocumented": 866
+   },
+   "phantom": []
+  },
+  "sklearn": {
+   "stats": {
+    "files": 671,
+    "functions": 11158,
+    "with_param_docs": 1612,
+    "phantom": 9,
+    "undocumented": 1026
+   },
+   "phantom": [
+    {
+     "file": "linear_model\\_glm\\tests\\test_glm.py",
+     "line": 87,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "linear_model\\_glm\\tests\\test_glm.py",
+     "line": 87,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "linear_model\\tests\\test_ridge.py",
+     "line": 97,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "utils\\tests\\test_testing.py",
+     "line": 220,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "utils\\tests\\test_testing.py",
+     "line": 258,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "utils\\tests\\test_testing.py",
+     "line": 554,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "utils\\tests\\test_testing.py",
+     "line": 580,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "utils\\tests\\test_testing.py",
+     "line": 366,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "utils\\tests\\test_testing.py",
+     "line": 378,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "smart_open": {
+   "stats": {
+    "files": 19,
+    "functions": 279,
+    "with_param_docs": 37,
+    "phantom": 0,
+    "undocumented": 20
+   },
+   "phantom": []
+  },
+  "sniffio": {
+   "stats": {
+    "files": 5,
+    "functions": 7,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "sqlglot": {
+   "stats": {
+    "files": 183,
+    "functions": 3295,
+    "with_param_docs": 191,
+    "phantom": 4,
+    "undocumented": 52
+   },
+   "phantom": [
+    {
+     "file": "expressions\\builders.py",
+     "line": 518,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "expressions\\builders.py",
+     "line": 628,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "expressions\\builders.py",
+     "line": 628,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "expressions\\builders.py",
+     "line": 713,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "sse_starlette": {
+   "stats": {
+    "files": 4,
+    "functions": 26,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "starlette": {
+   "stats": {
+    "files": 35,
+    "functions": 512,
+    "with_param_docs": 2,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "statsmodels": {
+   "stats": {
+    "files": 913,
+    "functions": 12645,
+    "with_param_docs": 2412,
+    "phantom": 4,
+    "undocumented": 1259
+   },
+   "phantom": [
+    {
+     "file": "distributions\\copula\\elliptical.py",
+     "line": 47,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "distributions\\copula\\elliptical.py",
+     "line": 103,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "regression\\mixed_linear_model.py",
+     "line": 2559,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "tsa\\stattools\\_stattools.py",
+     "line": 3719,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "streamlit": {
+   "stats": {
+    "files": 376,
+    "functions": 3415,
+    "with_param_docs": 481,
+    "phantom": 0,
+    "undocumented": 567
+   },
+   "phantom": []
+  },
+  "sympy": {
+   "stats": {
+    "files": 1532,
+    "functions": 35561,
+    "with_param_docs": 1361,
+    "phantom": 52,
+    "undocumented": 658
+   },
+   "phantom": [
+    {
+     "file": "codegen\\ast.py",
+     "line": 1072,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "combinatorics\\fp_groups.py",
+     "line": 1291,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\expr.py",
+     "line": 2905,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "core\\intfunc.py",
+     "line": 22,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "crypto\\crypto.py",
+     "line": 2632,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "crypto\\crypto.py",
+     "line": 3139,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "geometry\\line.py",
+     "line": 114,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "geometry\\line.py",
+     "line": 390,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "geometry\\line.py",
+     "line": 1050,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "geometry\\point.py",
+     "line": 1166,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "geometry\\point.py",
+     "line": 1193,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "geometry\\polygon.py",
+     "line": 901,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "geometry\\polygon.py",
+     "line": 1333,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "geometry\\polygon.py",
+     "line": 2179,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "matrices\\sparsetools.py",
+     "line": 9,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "matrices\\sparsetools.py",
+     "line": 9,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "matrices\\sparsetools.py",
+     "line": 9,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "physics\\biomechanics\\curve.py",
+     "line": 1055,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "physics\\continuum_mechanics\\cable.py",
+     "line": 41,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "physics\\continuum_mechanics\\cable.py",
+     "line": 41,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "physics\\continuum_mechanics\\cable.py",
+     "line": 41,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "physics\\optics\\polarization.py",
+     "line": 672,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "physics\\quantum\\qubit.py",
+     "line": 596,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "physics\\quantum\\qubit.py",
+     "line": 671,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "physics\\quantum\\qubit.py",
+     "line": 770,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "physics\\quantum\\tensorproduct.py",
+     "line": 41,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "physics\\vector\\fieldfunctions.py",
+     "line": 250,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "physics\\vector\\point.py",
+     "line": 119,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "plotting\\series.py",
+     "line": 613,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "polys\\domains\\domain.py",
+     "line": 578,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "polys\\matrices\\domainmatrix.py",
+     "line": 2745,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "polys\\numberfields\\primes.py",
+     "line": 298,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "polys\\numberfields\\primes.py",
+     "line": 327,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "polys\\ring_series.py",
+     "line": 576,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "stats\\crv_types.py",
+     "line": 888,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "stats\\crv_types.py",
+     "line": 2815,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "stats\\crv_types.py",
+     "line": 2815,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "stats\\crv_types.py",
+     "line": 3235,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "stats\\crv_types.py",
+     "line": 3235,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "stats\\crv_types.py",
+     "line": 3368,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "tenacity": {
+   "stats": {
+    "files": 12,
+    "functions": 164,
+    "with_param_docs": 2,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "tifffile": {
+   "stats": {
+    "files": 10,
+    "functions": 887,
+    "with_param_docs": 106,
+    "phantom": 3,
+    "undocumented": 188
+   },
+   "phantom": [
+    {
+     "file": "tifffile.py",
+     "line": 6759,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "tifffile.py",
+     "line": 6759,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "tifffile.py",
+     "line": 6759,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "tiktoken": {
+   "stats": {
+    "files": 6,
+    "functions": 52,
+    "with_param_docs": 1,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "tiktoken_ext": {
+   "stats": {
+    "files": 1,
+    "functions": 7,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "tokenizers": {
+   "stats": {
+    "files": 16,
+    "functions": 72,
+    "with_param_docs": 26,
+    "phantom": 2,
+    "undocumented": 4
+   },
+   "phantom": [
+    {
+     "file": "implementations\\base_tokenizer.py",
+     "line": 164,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "implementations\\base_tokenizer.py",
+     "line": 369,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "toml": {
+   "stats": {
+    "files": 5,
+    "functions": 56,
+    "with_param_docs": 4,
+    "phantom": 0,
+    "undocumented": 1
+   },
+   "phantom": []
+  },
+  "torch": {
+   "stats": {
+    "files": 2141,
+    "functions": 42608,
+    "with_param_docs": 2183,
+    "phantom": 105,
+    "undocumented": 1232
+   },
+   "phantom": [
+    {
+     "file": "_dynamo\\package.py",
+     "line": 936,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_dynamo\\package.py",
+     "line": 936,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_dynamo\\utils.py",
+     "line": 1970,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_dynamo\\utils.py",
+     "line": 2026,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_dynamo\\utils.py",
+     "line": 2135,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_export\\utils.py",
+     "line": 1455,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_export\\utils.py",
+     "line": 1455,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_functorch\\_activation_offloading\\activation_offloading.py",
+     "line": 269,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_functorch\\_aot_autograd\\schemas.py",
+     "line": 1279,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_functorch\\functional_call.py",
+     "line": 13,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_functorch\\partitioners.py",
+     "line": 3449,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_higher_order_ops\\flex_attention.py",
+     "line": 218,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_higher_order_ops\\scan.py",
+     "line": 78,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\autotune_process.py",
+     "line": 1254,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\autotune_process.py",
+     "line": 1374,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\choices.py",
+     "line": 214,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\choices.py",
+     "line": 269,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\codegen\\cutlass\\python_evt.py",
+     "line": 146,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\codegen\\cutlass\\template.py",
+     "line": 89,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\codegen\\subgraph.py",
+     "line": 234,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\fx_passes\\memory_estimator.py",
+     "line": 328,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\kernel\\flex\\common.py",
+     "line": 112,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\kernel\\mm.py",
+     "line": 861,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\kernel\\mm.py",
+     "line": 861,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\kernel\\mm.py",
+     "line": 861,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\kernel\\mm.py",
+     "line": 861,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\kernel\\mm_common.py",
+     "line": 106,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\kernel\\mm_common.py",
+     "line": 106,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\kernel\\mm_common.py",
+     "line": 106,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\kernel\\vendored_templates\\cutedsl_grouped_gemm.py",
+     "line": 1708,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\kernel_inputs.py",
+     "line": 200,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\kernel_inputs.py",
+     "line": 286,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\lowering.py",
+     "line": 450,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\lowering.py",
+     "line": 450,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\lowering.py",
+     "line": 450,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\runtime\\caching\\implementations.py",
+     "line": 75,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\runtime\\caching\\implementations.py",
+     "line": 252,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_inductor\\runtime\\caching\\implementations.py",
+     "line": 377,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_library\\custom_ops.py",
+     "line": 228,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "_library\\custom_ops.py",
+     "line": 803,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "torchgen": {
+   "stats": {
+    "files": 62,
+    "functions": 876,
+    "with_param_docs": 2,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "torchvision": {
+   "stats": {
+    "files": 182,
+    "functions": 2171,
+    "with_param_docs": 355,
+    "phantom": 0,
+    "undocumented": 76
+   },
+   "phantom": []
+  },
+  "tqdm": {
+   "stats": {
+    "files": 31,
+    "functions": 238,
+    "with_param_docs": 33,
+    "phantom": 0,
+    "undocumented": 51
+   },
+   "phantom": []
+  },
+  "transformers": {
+   "stats": {
+    "files": 2681,
+    "functions": 35432,
+    "with_param_docs": 2740,
+    "phantom": 105,
+    "undocumented": 3397
+   },
+   "phantom": [
+    {
+     "file": "integrations\\deepspeed.py",
+     "line": 583,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "integrations\\deepspeed.py",
+     "line": 583,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "integrations\\ggml.py",
+     "line": 831,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "loss\\loss_rf_detr.py",
+     "line": 140,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\altclip\\modeling_altclip.py",
+     "line": 161,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\bridgetower\\modeling_bridgetower.py",
+     "line": 856,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\camembert\\modeling_camembert.py",
+     "line": 142,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\chmv2\\image_processing_chmv2.py",
+     "line": 317,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\clap\\modeling_clap.py",
+     "line": 1010,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\cosmos3_edge\\modeling_cosmos3_edge.py",
+     "line": 413,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\data2vec\\modeling_data2vec_text.py",
+     "line": 141,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\deberta\\modeling_deberta.py",
+     "line": 73,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\deberta\\modeling_deberta.py",
+     "line": 73,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\deberta_v2\\modeling_deberta_v2.py",
+     "line": 72,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\deberta_v2\\modeling_deberta_v2.py",
+     "line": 72,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\deberta_v2\\modeling_deberta_v2.py",
+     "line": 72,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\deepseek_ocr2\\modeling_deepseek_ocr2.py",
+     "line": 396,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\dpt\\image_processing_dpt.py",
+     "line": 327,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\dpt\\modular_dpt.py",
+     "line": 122,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\edgetam\\modeling_edgetam.py",
+     "line": 636,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\edgetam\\modeling_edgetam.py",
+     "line": 636,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\edgetam\\modeling_edgetam.py",
+     "line": 636,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\edgetam_video\\modeling_edgetam_video.py",
+     "line": 1747,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\edgetam_video\\modeling_edgetam_video.py",
+     "line": 1747,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\edgetam_video\\modeling_edgetam_video.py",
+     "line": 1747,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\emu3\\image_processing_emu3.py",
+     "line": 159,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\esm\\modeling_esm.py",
+     "line": 1050,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\esm\\modeling_esmfold.py",
+     "line": 824,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\esm\\openfold_utils\\rigid_utils.py",
+     "line": 907,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\evolla\\modeling_evolla.py",
+     "line": 52,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\got_ocr2\\modeling_got_ocr2.py",
+     "line": 224,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\ibert\\quant_modules.py",
+     "line": 704,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\kosmos2\\modeling_kosmos2.py",
+     "line": 644,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\kosmos2_5\\modeling_kosmos2_5.py",
+     "line": 707,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\lilt\\modeling_lilt.py",
+     "line": 97,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\llama4\\image_processing_llama4.py",
+     "line": 51,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\llama4\\modeling_llama4.py",
+     "line": 66,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\llama4\\modeling_llama4.py",
+     "line": 66,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\llama4\\processing_llama4.py",
+     "line": 94,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "models\\longformer\\modeling_longformer.py",
+     "line": 368,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "trl": {
+   "stats": {
+    "files": 159,
+    "functions": 1248,
+    "with_param_docs": 153,
+    "phantom": 0,
+    "undocumented": 152
+   },
+   "phantom": []
+  },
+  "truststore": {
+   "stats": {
+    "files": 6,
+    "functions": 63,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "typer": {
+   "stats": {
+    "files": 32,
+    "functions": 569,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "typing_inspection": {
+   "stats": {
+    "files": 3,
+    "functions": 17,
+    "with_param_docs": 2,
+    "phantom": 0,
+    "undocumented": 1
+   },
+   "phantom": []
+  },
+  "urllib3": {
+   "stats": {
+    "files": 36,
+    "functions": 502,
+    "with_param_docs": 39,
+    "phantom": 1,
+    "undocumented": 16
+   },
+   "phantom": [
+    {
+     "file": "util\\request.py",
+     "line": 162,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "uuid_utils": {
+   "stats": {
+    "files": 2,
+    "functions": 8,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "uvicorn": {
+   "stats": {
+    "files": 42,
+    "functions": 307,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "watchdog": {
+   "stats": {
+    "files": 25,
+    "functions": 331,
+    "with_param_docs": 44,
+    "phantom": 2,
+    "undocumented": 2
+   },
+   "phantom": [
+    {
+     "file": "watchmedo.py",
+     "line": 127,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "watchmedo.py",
+     "line": 140,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "watchfiles": {
+   "stats": {
+    "files": 7,
+    "functions": 39,
+    "with_param_docs": 7,
+    "phantom": 0,
+    "undocumented": 15
+   },
+   "phantom": []
+  },
+  "websockets": {
+   "stats": {
+    "files": 52,
+    "functions": 649,
+    "with_param_docs": 114,
+    "phantom": 9,
+    "undocumented": 98
+   },
+   "phantom": [
+    {
+     "file": "asyncio\\connection.py",
+     "line": 1144,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "client.py",
+     "line": 132,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "legacy\\client.py",
+     "line": 252,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "legacy\\client.py",
+     "line": 252,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "legacy\\framing.py",
+     "line": 122,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "legacy\\server.py",
+     "line": 399,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "legacy\\server.py",
+     "line": 553,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "legacy\\server.py",
+     "line": 553,
+     "func": "",
+     "param": ""
+    },
+    {
+     "file": "trio\\connection.py",
+     "line": 1143,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "win32": {
+   "stats": {
+    "files": 118,
+    "functions": 630,
+    "with_param_docs": 3,
+    "phantom": 1,
+    "undocumented": 1
+   },
+   "phantom": [
+    {
+     "file": "lib\\_win32verstamp_pywin32ctypes.py",
+     "line": 97,
+     "func": "",
+     "param": ""
+    }
+   ]
+  },
+  "win32com": {
+   "stats": {
+    "files": 47,
+    "functions": 748,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "win32comext": {
+   "stats": {
+    "files": 69,
+    "functions": 746,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "wrapt": {
+   "stats": {
+    "files": 13,
+    "functions": 299,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "yaml": {
+   "stats": {
+    "files": 17,
+    "functions": 347,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "yarl": {
+   "stats": {
+    "files": 8,
+    "functions": 116,
+    "with_param_docs": 0,
+    "phantom": 0,
+    "undocumented": 0
+   },
+   "phantom": []
+  },
+  "zstandard": {
+   "stats": {
+    "files": 2,
+    "functions": 187,
+    "with_param_docs": 26,
+    "phantom": 0,
+    "undocumented": 4
+   },
+   "phantom": []
+  }
+ }
+}
