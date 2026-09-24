@@ -184,9 +184,27 @@ def test_a_section_header_with_trailing_text_is_not_a_parameter():
 
 @pytest.mark.parametrize(
     "header",
-    ["Returns", "Example", "Examples", "See Also", "Shape", "Inputs", "Outputs",
-     "Requirements", "Relations", "Definitions", "Warning", "Warnings", "Notes",
-     "References", "Usage", "Methods", "Tip", "Caution", "Deprecated"],
+    [
+        "Returns",
+        "Example",
+        "Examples",
+        "See Also",
+        "Shape",
+        "Inputs",
+        "Outputs",
+        "Requirements",
+        "Relations",
+        "Definitions",
+        "Warning",
+        "Warnings",
+        "Notes",
+        "References",
+        "Usage",
+        "Methods",
+        "Tip",
+        "Caution",
+        "Deprecated",
+    ],
 )
 def test_every_known_section_header_ends_the_argument_block(header):
     doc = f"""Summary.

@@ -51,7 +51,7 @@ STOP = re.compile(
 # A URL in a description is not a parameter. `https://example.com` matches
 # ENTRY because `https` is a word followed by a colon, which put `https` in
 # the results five times across six packages.
-URLISH = re.compile(r"^\s*\*{0,2}(?:https?|ftp|ftps|file|mailto|ssh|git)\s*:", re.I)
+URLISH = re.compile(r"^\s*\*{0,2}(?:https?|ftp|ftps|file|mailto|ssh|git)\s*:", re.IGNORECASE)
 
 SELFISH = {"self", "cls"}
 
