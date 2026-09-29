@@ -16,7 +16,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
 
-from drift import scan_path  # noqa: E402
+from drift import scan_path
 
 
 def resolve(argument: str | None) -> Path:
@@ -35,9 +35,7 @@ def resolve(argument: str | None) -> Path:
     try:
         module = __import__(argument)
     except ImportError:
-        raise SystemExit(
-            f"'{argument}' is neither a path nor an importable package."
-        ) from None
+        raise SystemExit(f"'{argument}' is neither a path nor an importable package.") from None
     where = getattr(module, "__file__", None)
     if not where:
         raise SystemExit(f"'{argument}' has no file on disk to scan.")

@@ -19,8 +19,12 @@ jobs:
       - run: uv sync --all-groups
       - name: Lint
         run: |
-          uv run ruff check src tests
-          uv run ruff format --check src tests
+          uv run ruff check src tests demo.py scripts
+          uv run ruff format --check src tests demo.py scripts
       - name: Test
         # No network: every case is a hand-written source string parsed with ast.
         run: uv run pytest -q
+      - name: Drift check (dogfood the CLI as a CI gate)
+        # src/ is clean; this only passes because the exit code is real. A phantom
+        # parameter here would make this step - and the build - fail.
+        run: uv run python src/drift.py src
