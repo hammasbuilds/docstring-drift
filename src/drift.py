@@ -11,8 +11,11 @@ safely over third-party code you did not write, and the result is deterministic.
 
 from __future__ import annotations
 
+import argparse
 import ast
+import json
 import re
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -54,6 +57,10 @@ STOP = re.compile(
 URLISH = re.compile(r"^\s*\*{0,2}(?:https?|ftp|ftps|file|mailto|ssh|git)\s*:", re.IGNORECASE)
 
 SELFISH = {"self", "cls"}
+
+# Directories never scanned even when they sit under the given root: a project's own
+# tests, and the two spellings ("test" and "tests") both appear in the wild.
+EXCLUDED_DIR_NAMES = {"test", "tests"}
 
 
 def documented_params(docstring: str) -> set[str]:
@@ -174,7 +181,18 @@ def scan_source(source: str, filename: str) -> list[Finding]:
 
 
 def scan_path(root: Path, limit_files: int | None = None) -> tuple[list[Finding], dict]:
-    files = sorted(p for p in root.rglob("*.py") if "test" not in p.parts)
+    """Scan a single file or every ``*.py`` file under a directory.
+
+    Raises `FileNotFoundError` if `root` does not exist, so a mistyped path is a loud
+    error instead of a silent "scanned 0 files, 0 functions".
+    """
+    if not root.exists():
+        raise FileNotFoundError(f"{root} does not exist")
+
+    if root.is_file():
+        files = [root]
+    else:
+        files = sorted(p for p in root.rglob("*.py") if not EXCLUDED_DIR_NAMES & set(p.parts))
     if limit_files:
         files = files[:limit_files]
 
@@ -194,10 +212,13 @@ def scan_path(root: Path, limit_files: int | None = None) -> tuple[list[Finding]
                 functions += 1
                 if ast.get_docstring(node) and documented_params(ast.get_docstring(node)):
                     documented += 1
-        try:
-            rel = str(path.relative_to(root))
-        except ValueError:
-            rel = str(path)
+        if root.is_file():
+            rel = path.name
+        else:
+            try:
+                rel = str(path.relative_to(root))
+            except ValueError:
+                rel = str(path)
         findings.extend(scan_source(source, rel))
 
     stats = {
@@ -210,15 +231,68 @@ def scan_path(root: Path, limit_files: int | None = None) -> tuple[list[Finding]
     return findings, stats
 
 
-if __name__ == "__main__":
-    import sys
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        prog="drift.py",
+        description=(
+            "Find docstrings that document parameters their function does not have. "
+            "Exits 1 if it finds any (so it can gate a build), 2 on a bad path, 0 if clean."
+        ),
+    )
+    parser.add_argument(
+        "path",
+        nargs="?",
+        default=".",
+        help="a .py file, or a directory to scan recursively (default: .)",
+    )
+    parser.add_argument("--limit-files", type=int, default=None, help="scan at most N files")
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="print findings and stats as JSON instead of text (for scripting/CI)",
+    )
+    return parser
 
-    target = Path(sys.argv[1] if len(sys.argv) > 1 else ".")
-    findings, stats = scan_path(target)
-    print(f"scanned {stats['files']} files, {stats['functions']} functions")
-    print(f"  with a documented parameter list: {stats['with_param_docs']}")
-    print(f"  PHANTOM (documented, does not exist): {stats['phantom']}")
-    print(f"  undocumented parameters            : {stats['undocumented']}")
-    print("\nfirst phantom findings:")
-    for f in [f for f in findings if f.kind == "phantom"][:12]:
-        print(f"  {f.file}:{f.line}  {f.describe()}")
+
+def main(argv: list[str] | None = None) -> int:
+    args = build_parser().parse_args(argv)
+    target = Path(args.path)
+
+    try:
+        findings, stats = scan_path(target, limit_files=args.limit_files)
+    except FileNotFoundError as exc:
+        if args.json:
+            print(json.dumps({"error": str(exc)}))
+        else:
+            print(f"error: {exc}", file=sys.stderr)
+        return 2
+
+    if args.json:
+        payload = {
+            "stats": stats,
+            "findings": [
+                {
+                    "file": f.file,
+                    "line": f.line,
+                    "function": f.function,
+                    "kind": f.kind,
+                    "name": f.name,
+                }
+                for f in findings
+            ],
+        }
+        print(json.dumps(payload, indent=2))
+    else:
+        print(f"scanned {stats['files']} files, {stats['functions']} functions")
+        print(f"  with a documented parameter list: {stats['with_param_docs']}")
+        print(f"  PHANTOM (documented, does not exist): {stats['phantom']}")
+        print(f"  undocumented parameters            : {stats['undocumented']}")
+        print("\nfirst phantom findings:")
+        for f in [f for f in findings if f.kind == "phantom"][:12]:
+            print(f"  {f.file}:{f.line}  {f.describe()}")
+
+    return 1 if stats["phantom"] else 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

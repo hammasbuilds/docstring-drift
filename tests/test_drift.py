@@ -7,6 +7,7 @@ noise cannot come back silently.
 
 from __future__ import annotations
 
+import json
 import sys
 from pathlib import Path
 
@@ -16,7 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
 import ast
 
-from drift import documented_params, scan_source, signature_params
+from drift import documented_params, main, scan_path, scan_source, signature_params
 
 
 def params_of(src: str) -> list[str]:
@@ -256,3 +257,82 @@ def test_the_real_sentence_transformers_docstring_still_reports_its_drift():
     assert {"margin", "squared"} <= found
     assert "Returns" not in found
     assert "Label_Sentence_Triplet" not in found
+
+
+# --- CLI / scan_path: a nonexistent path or a single file must not silently say "clean" ---
+#
+# Round 1 scoring found the CLI reports "scanned 0 files, 0 functions", exit 0, on a
+# mistyped path, on a single .py file (rglob on a file yields nothing), and on --help
+# (there was no argparse, so it was parsed as a path). And the exit code was always 0
+# even with findings, so "it works as a CI check" (README) was not true. All four are
+# regression-tested here.
+
+
+def test_scan_path_raises_on_a_nonexistent_path(tmp_path):
+    with pytest.raises(FileNotFoundError):
+        scan_path(tmp_path / "does_not_exist_xyz")
+
+
+def test_scan_path_accepts_a_single_file(tmp_path):
+    f = tmp_path / "mod.py"
+    f.write_text('def f(a):\n    """Args:\n        b: phantom\n    """\n', encoding="utf-8")
+    findings, stats = scan_path(f)
+    assert stats["files"] == 1
+    assert stats["phantom"] == 1
+    assert findings[0].file == "mod.py"  # not "." (relative_to itself)
+
+
+def test_scan_path_excludes_tests_directory_not_just_test(tmp_path):
+    """The original filter was `"test" not in p.parts`, which only excludes a
+    directory literally named `test` (singular) - not `tests`, the far more common
+    convention, and the one this project itself uses."""
+    (tmp_path / "tests").mkdir()
+    (tmp_path / "tests" / "test_mod.py").write_text(
+        'def f(a):\n    """Args:\n        b: phantom\n    """\n', encoding="utf-8"
+    )
+    findings, stats = scan_path(tmp_path)
+    assert stats["files"] == 0
+    assert findings == []
+
+
+def test_main_exits_nonzero_on_a_nonexistent_path(tmp_path, capsys):
+    code = main([str(tmp_path / "does_not_exist_xyz")])
+    assert code == 2
+    assert "does not exist" in capsys.readouterr().err
+
+
+def test_main_exits_nonzero_when_it_finds_phantom_parameters(tmp_path):
+    f = tmp_path / "mod.py"
+    f.write_text('def f(a):\n    """Args:\n        b: phantom\n    """\n', encoding="utf-8")
+    assert main([str(f)]) == 1
+
+
+def test_main_exits_zero_when_clean(tmp_path):
+    f = tmp_path / "mod.py"
+    f.write_text('def f(a):\n    """Args:\n        a: real\n    """\n', encoding="utf-8")
+    assert main([str(f)]) == 0
+
+
+def test_main_help_does_not_get_parsed_as_a_path(capsys):
+    with pytest.raises(SystemExit) as exc:
+        main(["--help"])
+    assert exc.value.code == 0
+    assert "usage:" in capsys.readouterr().out
+
+
+def test_main_json_output_is_valid_and_carries_the_finding(tmp_path, capsys):
+    f = tmp_path / "mod.py"
+    f.write_text('def f(a):\n    """Args:\n        b: phantom\n    """\n', encoding="utf-8")
+    code = main([str(f), "--json"])
+    assert code == 1
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["stats"]["phantom"] == 1
+    assert payload["findings"][0]["name"] == "b"
+    assert payload["findings"][0]["kind"] == "phantom"
+
+
+def test_main_json_output_on_a_bad_path_is_still_valid_json(tmp_path, capsys):
+    code = main([str(tmp_path / "nope"), "--json"])
+    assert code == 2
+    payload = json.loads(capsys.readouterr().out)
+    assert "error" in payload
