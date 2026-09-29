@@ -6,8 +6,12 @@ requires-python = ">=3.11"
 dependencies = []
 
 [project.optional-dependencies]
+# Real extra, for `pip install -e ".[dev]"` (dependency-groups below are PEP 735,
+# which plain pip does not install from - this keeps the pip-only path working too).
+dev = ["pytest>=8", "ruff>=0.16,<0.17"]
 
 [dependency-groups]
+# Same list, for `uv sync --all-groups` (what CI uses).
 dev = ["pytest>=8", "ruff>=0.16,<0.17"]
 
 [build-system]
