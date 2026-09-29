@@ -37,7 +37,10 @@ Omitting a parameter from a docstring is frequently intentional - internal argum
 deprecated ones, or ones covered in prose - so it cannot be treated as a defect the way a
 phantom can.
 
-## Small sample of packages
+## Not a random sample of the ecosystem
 
-Eight packages is enough to show the phenomenon exists and to size it roughly. It is not
-enough to claim 1.40% is representative of Python packages generally.
+The 161 packages scanned are whatever happened to be installed across the venvs on the
+machine that ran the scan - convenient, not random. That's enough to show the phenomenon
+exists and to size it roughly among widely-used libraries, but not enough to claim the
+measured rate is representative of PyPI generally. See [FUTURE.md](FUTURE.md) for what a
+real random sample would take.

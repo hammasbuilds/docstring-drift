@@ -14,7 +14,7 @@
   <a href="https://github.com/hammasbuilds/docstring-drift/actions/workflows/ci.yml"><img src="https://github.com/hammasbuilds/docstring-drift/actions/workflows/ci.yml/badge.svg" alt="ci"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/hammasbuilds/docstring-drift" alt="license"></a>
   <img src="https://img.shields.io/badge/python-3.11%2B-blue" alt="python">
-  <img src="https://img.shields.io/badge/tests-42%20passing-brightgreen" alt="tests">
+  <img src="https://img.shields.io/badge/tests-51%20passing-brightgreen" alt="tests">
   <img src="https://img.shields.io/badge/runtime%20deps-zero-success" alt="zero dependencies">
   <a href="https://github.com/astral-sh/ruff"><img src="https://img.shields.io/badge/lint-ruff-261230" alt="ruff"></a>
 </p>
@@ -73,7 +73,7 @@ a test using the string that caused it.
 **45 of 161 packages carry at least one.** The rest are clean, which is the
 other half of the result: this is not a rate that applies everywhere.
 
-**Phantom rate: 1.40%** of every function that documents its parameters.
+**Phantom rate: 1.93%** of every function that documents its parameters (517 / 26,856).
 
 📊 **[Full results, per-package breakdown, and a verified example →](docs/RESULTS.md)**
 
@@ -122,12 +122,23 @@ flowchart LR
 ## Use it
 
 ```bash
-python src/drift.py <path>      # scan any directory of Python
-pytest -q                       # 20 tests, no network
+pip install -e .                # scanner itself: zero dependencies
+python src/drift.py <path>      # scan a directory, or a single .py file
+python src/drift.py --help      # usage
+python src/drift.py <path> --json   # machine-readable output, for scripting
+
+pip install -e ".[dev]"         # + pytest, ruff (or: uv sync --all-groups)
+pytest -q                       # 51 tests, no network
 ```
 
-It works as a CI check: **no dependencies beyond the standard library**, it imports
-nothing from the code it scans, and it exits deterministically.
+It works as a CI check: **no dependencies beyond the standard library** for the scanner
+itself, it imports nothing from the code it scans, and the exit code means something -
+`0` clean, `1` if it found phantom parameters, `2` if the path given doesn't exist. The
+`ci.yml` in this repo runs `python src/drift.py src` as its own gate.
+
+Scanning third-party source can hit non-ASCII paths (author names, unicode identifiers).
+On Windows, `chcp 65001` or setting `PYTHONUTF8=1` avoids console encoding errors when
+printing them.
 
 ---
 
@@ -173,9 +184,10 @@ before any number was published.
 ## Layout
 
 ```
-src/drift.py     parsing, comparison, scanning
-tests/           20 tests, including one per false-positive class
+src/drift.py     parsing, comparison, scanning, CLI
+tests/           51 tests, including one per false-positive class and one per CLI bug
 docs/            detailed documentation
+scripts/         scan_ecosystem.py - reproduces the ecosystem headline (see docs/RESULTS.md)
 results/         measured output
 ```
 

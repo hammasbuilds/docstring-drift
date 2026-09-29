@@ -31,10 +31,11 @@ than a stale parameter, because callers write `except` blocks against it.
 The scanner has no runtime dependencies and imports nothing, which makes it unusually easy
 to drop into CI. A `--fail-under` threshold would let a project ratchet down over time.
 
-## 6. Scan the top 1,000 PyPI packages
+## 6. Scan a random sample of PyPI, not a sample of convenience
 
-Eight packages show the phenomenon exists. A thousand would say whether **1.40%** is
-typical, and whether drift correlates with project size, age or release cadence.
+161 packages - whatever happened to be installed locally - show the phenomenon exists at
+roughly **1.93%**. A random sample of the top 1,000 PyPI packages would say whether that
+rate is typical, and whether drift correlates with project size, age or release cadence.
 
 ## 7. Correlate drift with commit history
 
