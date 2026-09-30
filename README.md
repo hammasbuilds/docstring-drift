@@ -53,7 +53,7 @@ a test using the string that caused it.
 
 ---
 
-## The result
+## Results
 
 | Package | functions | documenting params | **phantom** |
 |---|---:|---:|---:|
@@ -154,22 +154,6 @@ Point it at any directory of Python. Here, an installed `numpy`.
 
 *`genfromtxt` documents `skiprows` and `missing`. Neither is a parameter. The docstring
 even states that `skiprows` was removed in numpy 1.10 — and still lists it.*
-
----
-
-## The numbers were wrong the first time
-
-The first version reported **~400 phantom parameters in scipy alone**, and almost none
-were real. Prose like `Default: None` inside a description was being parsed as a parameter
-named `Default`.
-
-After fixing that and two other false-positive classes, **scipy went 434 → 27**. Every
-class now has a regression test, and one finding was verified by hand against real source
-before any number was published.
-
-🛠 **[Every problem hit while building this, and how each was fixed →](docs/PROBLEMS.md)**
-
----
 
 ## Also worth reading
 
