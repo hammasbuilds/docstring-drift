@@ -84,6 +84,21 @@ python src/drift.py path/to/site-packages/pandas
 python scripts/scan_ecosystem.py /path/to/many/repos -o results/ecosystem-scan.json
 ```
 
+The 161 package names in the published run are listed one per line in
+[`results/ecosystem-packages.txt`](../results/ecosystem-packages.txt), so the same set can
+be installed into a fresh venv and scanned:
+
+```bash
+python -m venv .venv-ecosystem
+.venv-ecosystem/bin/pip install <the distributions providing those names>
+python scripts/scan_ecosystem.py .venv-ecosystem/lib/python3.*/site-packages -o results/rerun.json
+```
+
+That run did not record package versions, so the list cannot be pinned to versions after
+the fact; the import names (not always the PyPI distribution names, e.g. `PIL` is
+`pillow`) are what was scanned. Reports written now also list, per package, any file
+the scanner could not parse (`"unparseable"`), so a rerun shows what it skipped.
+
 **Exact counts depend on which package versions happen to be installed** (see
 [LIMITATIONS.md](LIMITATIONS.md)) — a fresh run against different versions, or a
 differently-populated workspace, will not reproduce 517/161 to the digit. What *is*

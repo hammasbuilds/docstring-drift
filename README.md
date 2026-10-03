@@ -14,7 +14,7 @@
   <a href="https://github.com/hammasbuilds/docstring-drift/actions/workflows/ci.yml"><img src="https://github.com/hammasbuilds/docstring-drift/actions/workflows/ci.yml/badge.svg" alt="ci"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/hammasbuilds/docstring-drift" alt="license"></a>
   <img src="https://img.shields.io/badge/python-3.11%2B-blue" alt="python">
-  <img src="https://img.shields.io/badge/tests-51%20passing-brightgreen" alt="tests">
+  <img src="https://img.shields.io/badge/tests-57%20passing-brightgreen" alt="tests">
   <img src="https://img.shields.io/badge/runtime%20deps-zero-success" alt="zero dependencies">
   <a href="https://github.com/astral-sh/ruff"><img src="https://img.shields.io/badge/lint-ruff-261230" alt="ruff"></a>
 </p>
@@ -123,17 +123,26 @@ flowchart LR
 
 ```bash
 pip install -e .                # scanner itself: zero dependencies
-python src/drift.py <path>      # scan a directory, or a single .py file
-python src/drift.py --help      # usage
-python src/drift.py <path> --json   # machine-readable output, for scripting
+docstring-drift <path>          # scan a directory, or a single .py file
+docstring-drift --help          # usage
+docstring-drift <path> --json   # machine-readable output, for scripting
+python src/drift.py <path>      # same thing without installing
 
 pip install -e ".[dev]"         # + pytest, ruff (or: uv sync --all-groups)
-pytest -q                       # 51 tests, no network
+pytest -q                       # 57 tests, no network
 ```
 
 It works as a CI check: **no dependencies beyond the standard library** for the scanner
-itself, it imports nothing from the code it scans, and the exit code means something -
-`0` clean, `1` if it found phantom parameters, `2` if the path given doesn't exist. The
+itself, it imports nothing from the code it scans, and the exit code means something:
+
+| Exit | Meaning |
+|---:|---|
+| `0` | clean: every file parsed, no phantom parameters |
+| `1` | phantom parameters found |
+| `2` | the path given does not exist |
+| `3` | one or more files could not be parsed (syntax error, null bytes, unreadable); each is listed with its line and error on stderr, or under `"unparseable"` in `--json`. Takes precedence over `1`, so a scan that skipped files never passes a gate. |
+
+The
 `ci.yml` in this repo runs `python src/drift.py src` as its own gate.
 
 Scanning third-party source can hit non-ASCII paths (author names, unicode identifiers).
@@ -169,7 +178,7 @@ even states that `skiprows` was removed in numpy 1.10 — and still lists it.*
 
 ```
 src/drift.py     parsing, comparison, scanning, CLI
-tests/           51 tests, including one per false-positive class and one per CLI bug
+tests/           57 tests, including one per false-positive class and one per CLI bug
 docs/            detailed documentation
 scripts/         scan_ecosystem.py - reproduces the ecosystem headline (see docs/RESULTS.md)
 results/         measured output
