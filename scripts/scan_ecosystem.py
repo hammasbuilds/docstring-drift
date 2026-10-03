@@ -34,7 +34,7 @@ from collections import defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
-from drift import scan_path
+from drift import ParseError, scan_path
 
 SKIP_PREFIX = ("_", ".")
 SKIP_EXACT = {
@@ -137,7 +137,8 @@ def main(argv: list[str] | None = None) -> int:
     totals: dict[str, int] = defaultdict(int)
     for i, (name, path) in enumerate(sorted(seen.items()), 1):
         try:
-            findings, stats = scan_path(path)
+            errors: list[ParseError] = []
+            findings, stats = scan_path(path, errors=errors)
         except (OSError, RecursionError, MemoryError) as exc:
             print(f"  [{i}/{len(seen)}] {name}: skipped ({type(exc).__name__})", flush=True)
             continue
@@ -150,6 +151,7 @@ def main(argv: list[str] | None = None) -> int:
                 for f in findings
                 if f.kind == "phantom"
             ][:40],
+            "unparseable": [{"file": e.file, "error": e.message} for e in errors][:40],
         }
         for k, v in stats.items():
             totals[k] += v
@@ -173,6 +175,7 @@ def main(argv: list[str] | None = None) -> int:
     print(f"with param docs       {totals['with_param_docs']:>10,}")
     print(f"PHANTOM               {totals['phantom']:>10,}")
     print(f"undocumented params   {totals['undocumented']:>10,}")
+    print(f"unparseable files     {totals['unparseable']:>10,}  (not checked; listed per package)")
     if totals["with_param_docs"]:
         rate = totals["phantom"] / totals["with_param_docs"] * 100
         print(f"\nphantom rate: {rate:.2f}% of functions that document a parameter list")

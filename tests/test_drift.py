@@ -336,3 +336,58 @@ def test_main_json_output_on_a_bad_path_is_still_valid_json(tmp_path, capsys):
     assert code == 2
     payload = json.loads(capsys.readouterr().out)
     assert "error" in payload
+
+
+# --- unparseable files ------------------------------------------------------------------
+
+
+def test_syntax_error_file_exits_3_and_is_named(tmp_path, capsys):
+    bad = tmp_path / "x.py"
+    bad.write_text("def f(:\n", encoding="utf-8")
+    assert main([str(bad)]) == 3
+    err = capsys.readouterr().err
+    assert "could not parse 1 file" in err
+    assert "x.py:1" in err and "SyntaxError" in err
+
+
+def test_unparseable_beats_phantom_exit_code(tmp_path):
+    (tmp_path / "bad.py").write_text("def f(:\n", encoding="utf-8")
+    (tmp_path / "phantom.py").write_text(
+        'def f(a):\n    """Doc.\n\n    Args:\n        a: x\n        b: y\n    """\n',
+        encoding="utf-8",
+    )
+    assert main([str(tmp_path)]) == 3
+
+
+def test_unparseable_in_json_output(tmp_path, capsys):
+    (tmp_path / "ok.py").write_text("def g():\n    pass\n", encoding="utf-8")
+    (tmp_path / "bad.py").write_text("class :\n", encoding="utf-8")
+    assert main([str(tmp_path), "--json"]) == 3
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["stats"]["unparseable"] == 1
+    assert payload["stats"]["functions"] == 1
+    assert payload["unparseable"][0]["file"] == "bad.py"
+    assert payload["unparseable"][0]["line"] == 1
+
+
+def test_null_byte_file_is_unparseable_not_crash(tmp_path):
+    (tmp_path / "nul.py").write_bytes(b"x = 1\x00\n")
+    errors = []
+    _, stats = scan_path(tmp_path, errors=errors)
+    assert stats["unparseable"] == 1 and errors[0].file == "nul.py"
+
+
+def test_clean_scan_reports_zero_unparseable(tmp_path):
+    (tmp_path / "ok.py").write_text("def g():\n    pass\n", encoding="utf-8")
+    _, stats = scan_path(tmp_path)
+    assert stats["unparseable"] == 0
+    assert main([str(tmp_path)]) == 0
+
+
+def test_console_script_declared():
+    import tomllib
+
+    data = tomllib.loads(
+        (Path(__file__).resolve().parent.parent / "pyproject.toml").read_text(encoding="utf-8")
+    )
+    assert data["project"]["scripts"]["docstring-drift"] == "drift:main"

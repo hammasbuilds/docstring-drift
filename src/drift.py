@@ -180,12 +180,27 @@ def scan_source(source: str, filename: str) -> list[Finding]:
     return findings
 
 
-def scan_path(root: Path, limit_files: int | None = None) -> tuple[list[Finding], dict]:
+@dataclass
+class ParseError:
+    file: str
+    line: int | None
+    message: str
+
+
+def scan_path(
+    root: Path, limit_files: int | None = None, errors: list[ParseError] | None = None
+) -> tuple[list[Finding], dict]:
     """Scan a single file or every ``*.py`` file under a directory.
 
     Raises `FileNotFoundError` if `root` does not exist, so a mistyped path is a loud
     error instead of a silent "scanned 0 files, 0 functions".
+
+    Files that cannot be read or parsed are counted in ``stats["unparseable"]`` and, if
+    `errors` is given, appended to it as `ParseError` records - they are never skipped
+    silently, because a file the scanner could not read is a file it did not check.
     """
+    if errors is None:
+        errors = []
     if not root.exists():
         raise FileNotFoundError(f"{root} does not exist")
 
@@ -199,19 +214,6 @@ def scan_path(root: Path, limit_files: int | None = None) -> tuple[list[Finding]
     findings: list[Finding] = []
     functions = documented = 0
     for path in files:
-        try:
-            source = path.read_text(encoding="utf-8", errors="replace")
-        except OSError:
-            continue
-        try:
-            tree = ast.parse(source)
-        except SyntaxError:
-            continue
-        for node in ast.walk(tree):
-            if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
-                functions += 1
-                if ast.get_docstring(node) and documented_params(ast.get_docstring(node)):
-                    documented += 1
         if root.is_file():
             rel = path.name
         else:
@@ -219,6 +221,23 @@ def scan_path(root: Path, limit_files: int | None = None) -> tuple[list[Finding]
                 rel = str(path.relative_to(root))
             except ValueError:
                 rel = str(path)
+        try:
+            source = path.read_text(encoding="utf-8", errors="replace")
+        except OSError as exc:
+            errors.append(ParseError(rel, None, f"could not read: {exc}"))
+            continue
+        try:
+            tree = ast.parse(source)
+        except (SyntaxError, ValueError) as exc:
+            line = getattr(exc, "lineno", None)
+            msg = getattr(exc, "msg", None) or str(exc)
+            errors.append(ParseError(rel, line, f"{type(exc).__name__}: {msg}"))
+            continue
+        for node in ast.walk(tree):
+            if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                functions += 1
+                if ast.get_docstring(node) and documented_params(ast.get_docstring(node)):
+                    documented += 1
         findings.extend(scan_source(source, rel))
 
     stats = {
@@ -227,16 +246,25 @@ def scan_path(root: Path, limit_files: int | None = None) -> tuple[list[Finding]
         "with_param_docs": documented,
         "phantom": sum(1 for f in findings if f.kind == "phantom"),
         "undocumented": sum(1 for f in findings if f.kind == "undocumented"),
+        "unparseable": len(errors),
     }
     return findings, stats
 
 
+EXIT_CLEAN = 0
+EXIT_PHANTOM = 1
+EXIT_BAD_PATH = 2
+EXIT_UNPARSEABLE = 3
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="drift.py",
+        prog="docstring-drift",
         description=(
             "Find docstrings that document parameters their function does not have. "
-            "Exits 1 if it finds any (so it can gate a build), 2 on a bad path, 0 if clean."
+            "Exit codes: 0 clean; 1 phantom parameters found; 2 path does not exist; "
+            "3 one or more files could not be parsed (checked before 1: an incomplete "
+            "scan is never reported as a pass or as a plain finding)."
         ),
     )
     parser.add_argument(
@@ -259,13 +287,14 @@ def main(argv: list[str] | None = None) -> int:
     target = Path(args.path)
 
     try:
-        findings, stats = scan_path(target, limit_files=args.limit_files)
+        errors: list[ParseError] = []
+        findings, stats = scan_path(target, limit_files=args.limit_files, errors=errors)
     except FileNotFoundError as exc:
         if args.json:
             print(json.dumps({"error": str(exc)}))
         else:
             print(f"error: {exc}", file=sys.stderr)
-        return 2
+        return EXIT_BAD_PATH
 
     if args.json:
         payload = {
@@ -280,6 +309,7 @@ def main(argv: list[str] | None = None) -> int:
                 }
                 for f in findings
             ],
+            "unparseable": [{"file": e.file, "line": e.line, "error": e.message} for e in errors],
         }
         print(json.dumps(payload, indent=2))
     else:
@@ -287,11 +317,22 @@ def main(argv: list[str] | None = None) -> int:
         print(f"  with a documented parameter list: {stats['with_param_docs']}")
         print(f"  PHANTOM (documented, does not exist): {stats['phantom']}")
         print(f"  undocumented parameters            : {stats['undocumented']}")
+        print(f"  unparseable files (NOT checked)    : {stats['unparseable']}")
         print("\nfirst phantom findings:")
         for f in [f for f in findings if f.kind == "phantom"][:12]:
             print(f"  {f.file}:{f.line}  {f.describe()}")
+        if errors:
+            print(
+                f"\nerror: could not parse {len(errors)} file(s); they were NOT checked:",
+                file=sys.stderr,
+            )
+            for e in errors:
+                where = f"{e.file}:{e.line}" if e.line else e.file
+                print(f"  {where}  {e.message}", file=sys.stderr)
 
-    return 1 if stats["phantom"] else 0
+    if errors:
+        return EXIT_UNPARSEABLE
+    return EXIT_PHANTOM if stats["phantom"] else EXIT_CLEAN
 
 
 if __name__ == "__main__":
